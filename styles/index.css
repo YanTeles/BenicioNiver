@@ -1,0 +1,49 @@
+@import url(header.css);
+@import url(global.css);
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+}
+
+main {
+    background-color: rgba(50, 205, 50, 0.7); /* Lime Green with 70% opacity, matching nav */
+    border: 6px double var(--color-cyan); /* Matching nav border */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); /* Matching nav box-shadow */
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 20px;
+    color: var(--color-text-dark); /* Dark text for readability */
+    min-height: 400px; /* Make it taller */
+    width: 80%; /* Make it wider */
+    max-width: 1000px; /* Limit maximum width */
+    margin-left: auto; /* Center the block */
+    margin-right: auto; /* Center the block */
+}
+
+main a {
+    font-family: var(--font-press-start-2p);
+    font-size: 1rem;
+    color: var(--color-text-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    text-shadow: 2px 2px 0px var(--color-vivid-red);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+main a:hover {
+    color: var(--color-cyan);
+    text-shadow: 2px 2px 5px var(--color-magenta);
+}
+
+
+
+
+
+
+
+
+
+

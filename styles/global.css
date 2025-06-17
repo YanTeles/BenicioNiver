@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --color-background: #4B0082; /* Dark Purple */
+    --color-cyan: #00FFFF;
+    --color-vivid-red: #FF0000;
+    --color-lime-green: #32CD32;
+    --color-orange: #FFA500;
+    --color-yellow: #FFFF00;
+    --color-magenta: #FF00FF;
+    --color-text-light: #FFFFFF;
+    --color-text-dark: #333333;
+
+    /* Font Families */
+    --font-bangers: 'Bangers', cursive;
+    --font-medieval-sharp: 'MedievalSharp', cursive;
+    --font-orbitron: 'Orbitron', sans-serif;
+    --font-press-start-2p: 'Press Start 2P', cursive;
+}
