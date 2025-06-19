@@ -31,11 +31,13 @@ header{
     align-items: center;
     gap: 1rem;
     list-style: none;
-    background-color: rgba(50, 205, 50, 0.7);
+    background-color: rgba(var(--color-cyan), 0.7);
     padding: 1rem;
     border-radius: 1rem;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
-    border: 0.6rem double var(--color-cyan);
+    box-shadow:
+        0 0 0 4px var(--color-metal-medium),
+        0 0 0 8px var(--color-metal-light);
+    border: 2px solid var(--color-metal-dark);
     margin: 1rem;
     width: 100%;
     height: 100%;
@@ -58,13 +60,13 @@ header{
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 400;
-    text-shadow: 0.2rem 0.2rem 0px var(--color-vivid-red);
+    text-shadow: 0.2rem 0.2rem 0px var(--color-text-dark);
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-header-list-item a:hover{
     color: var(--color-cyan);
-    text-shadow: 0.2rem 0.2rem 0.5rem var(--color-magenta);
+    text-shadow: 0.2rem 0.2rem 0.5rem var(--color-text-dark);
 }
 
 .arcade{

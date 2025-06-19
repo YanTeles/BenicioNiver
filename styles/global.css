@@ -2,21 +2,37 @@ html {
     font-size: 62.5%; /* 1rem = 10px for easier calculations */
 }
 
+body {
+    position: relative;
+    background-color: var(--color-background);
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 
 :root{
-    --color-background: #4B0082; /* Dark Purple */
-    --color-cyan: #00FFFF;
-    --color-vivid-red: #FF0000;
-    --color-lime-green: #32CD32;
-    --color-orange: #FFA500;
-    --color-yellow: #FFFF00;
-    --color-magenta: #FF00FF;
-    --color-text-light: #FFFFFF;
+    --color-background: #0A0A0A; /* Preto bem escuro */
+    --color-cyan: #00BFFF; /* Azul vibrante */
+    --color-vivid-red: #0080FF; /* Azul mais escuro */
+    --color-lime-green: #0047AB; /* Azul marinho */
+    --color-orange: #1E90FF; /* Azul dodger */
+    --color-yellow: #4169E1; /* Azul royal */
+    --color-magenta: #6495ED; /* Azul cornflower */
+    --color-text-light: #F0F0F0; /* Branco acinzentado para texto claro */
     --color-text-dark: #333333;
+
+    /* Cores para Metal Pixelado */
+    --color-metal-light: #C0C0C0;
+    --color-metal-medium: #808080;
+    --color-metal-dark: #404040;
+
+    /* Cores para Tema de Futebol */
+    --color-football-field: #4CAF50; /* Verde vibrante de campo */
+    --color-football-line: #FFFFFF; /* Branco para linhas do campo */
+    --color-football-dark: #2E8B57; /* Verde mais escuro */
+    --color-football-accent: #FFD700; /* Dourado para destaque (ex: troféu) */
 
     /* Font Families */
     --font-bangers: 'Bangers', cursive;

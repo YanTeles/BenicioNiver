@@ -1,0 +1,20 @@
+.press-start-button {
+    font-family: var(--font-press-start-2p);
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    background-color: #4CAF50; /* Um verde mais suave */
+    border: 0.2rem solid #4CAF50; /* Borda da mesma cor */
+    padding: 1.2rem 2.5rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    text-shadow: none; /* Remover sombra do texto */
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    margin-top: 2rem;
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.2);
+}
+
+.press-start-button:hover {
+    background-color: #45a049; /* Um verde um pouco mais escuro no hover */
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.3);
+} 

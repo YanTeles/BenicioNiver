@@ -11,28 +11,26 @@ body {
 
 body::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(18, 16, 16, 0.05);
-    animation: flicker 0.15s infinite alternate;
-    pointer-events: none;
-    z-index: 1000;
+    background: transparent;
+    animation: none;
+    background-image: none;
+    background-size: none;
+    z-index: -1;
 }
 
-body::after {
-    content: '';
-    position: absolute;
+#starfield {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 50%/10%;
-    box-shadow: 0 0 10rem rgba(0, 0, 0, 0.5) inset;
-    pointer-events: none;
-    z-index: 999;
+    z-index: -2;
+    background-color: black;
 }
 
 @keyframes flicker {
@@ -41,19 +39,33 @@ body::after {
     100% { opacity: 0.2; }
 }
 
+@keyframes star-fall {
+    from { background-position: 0 0; }
+    to { background-position: 0 500px; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 main {
-    background-color: rgba(50, 205, 50, 0.5);
-    border: 0.6rem double var(--color-cyan);
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+    background-color: rgba(var(--color-cyan), 0.5);
+    border: 2px solid var(--color-metal-dark);
+    box-shadow:
+        0 0 0 4px var(--color-metal-medium),
+        0 0 0 8px var(--color-metal-light);
     padding: 2rem;
     border-radius: 1rem;
-    margin: 2rem;
+    margin: 2rem auto;
     color: var(--color-text-light);
-    min-height: 80vh;
     width: 98%;
     max-width: 140rem;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .main-content-container {
@@ -66,11 +78,35 @@ main {
 .main-content-left {
     flex: 1;
     min-width: 30rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+.main-content-left h2 {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    text-shadow: 0.2rem 0.2rem 0px var(--color-vivid-red);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.main-content-left p {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    text-shadow: 0.2rem 0.2rem 0px var(--color-vivid-red);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    animation: fadeIn 1s ease-out 0.8s forwards;
 }
 
 .main-content-right {
     flex: 1;
     text-align: center;
+    animation: fadeIn 1s ease-out 0.2s forwards;
 }
 
 .main-content-right img {
@@ -96,9 +132,104 @@ main a:hover {
     text-shadow: 0.2rem 0.2rem 0.5rem var(--color-magenta);
 }
 
-.main-content-left:hover, .main-content-right:hover {
-    box-shadow: 0 0 2rem 0.5rem var(--color-lime-green), 0 0 0.5rem 0.2rem var(--color-cyan);
-    transition: box-shadow 0.3s;
+.press-start-button {
+    font-family: var(--font-press-start-2p);
+    font-size: 1.4rem;
+    color: var(--color-text-light);
+    background-color: var(--color-cyan);
+    border: 2px solid var(--color-metal-dark);
+    padding: 1.5rem 3rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    text-shadow: 0.2rem 0.2rem 0px var(--color-text-dark);
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    margin-top: 2rem;
+    box-shadow:
+        0 0 0 4px var(--color-metal-medium),
+        0 0 0 8px var(--color-metal-light);
+}
+
+.press-start-button:hover {
+    background-color: var(--color-orange);
+    transform: translateY(-0.2rem);
+    box-shadow:
+        0 0 0 4px var(--color-metal-medium),
+        0 0 0 8px var(--color-metal-light),
+        0 0.7rem 0 0 var(--color-text-dark);
+}
+
+.press-start-button:active {
+    transform: translateY(0.2rem);
+    box-shadow:
+        0 0 0 4px var(--color-metal-medium),
+        0 0 0 8px var(--color-metal-light),
+        0 0.3rem 0 0 var(--color-text-dark);
+}
+
+.timeline-section {
+    background-color: var(--color-football-field);
+    border: 2px solid var(--color-football-line);
+    box-shadow: 
+        0 0 0 5px var(--color-football-dark),
+        inset 0 0 10px rgba(0,0,0,0.5);
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 2rem auto;
+    color: var(--color-football-line);
+    min-height: 50vh;
+    max-height: 70vh;
+    width: 98%;
+    max-width: 140rem;
+    text-align: center;
+    position: relative;
+    overflow: auto;
+}
+
+.timeline-section::-webkit-scrollbar {
+    width: 12px;
+}
+
+.timeline-section::-webkit-scrollbar-track {
+    background: var(--color-football-dark);
+    border-radius: 10px;
+}
+
+.timeline-section::-webkit-scrollbar-thumb {
+    background: var(--color-football-line);
+    border-radius: 10px;
+    border: 2px solid var(--color-football-dark);
+}
+
+.timeline-section::-webkit-scrollbar-thumb:hover {
+    background: var(--color-football-accent);
+}
+
+.timeline-section h2,
+.timeline-section p {
+    font-family: var(--font-press-start-2p);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    color: var(--color-football-line);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.timeline-section h2 {
+    font-size: 1.2rem;
+}
+
+.timeline-section p {
+    font-size: 0.9rem;
+}
+
+.image-nav {
+    // ... existing code ...
 }
 
 
