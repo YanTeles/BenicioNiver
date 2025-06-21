@@ -623,6 +623,77 @@ main a:hover {
     color: var(--color-cyan);
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-content-left {
+        min-width: unset;
+        text-align: center;
+    }
+
+    .main-content-container {
+        flex-direction: column;
+    }
+
+    .press-start-button {
+        font-size: 1.2rem;
+        padding: 1.2rem 2.5rem;
+    }
+
+    .horizontal-timeline-section h2,
+    .photo-gallery-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .horizontal-timeline-section p,
+    .photo-gallery-section p {
+        font-size: 1rem;
+    }
+
+    .horizontal-timeline .swiper-slide {
+        height: auto;
+        min-height: 320px;
+    }
+
+    .family-gallery-swiper .swiper-slide {
+        width: 240px;
+    }
+
+    .nav-header-list-item a {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .press-start-button {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+
+    .nav-header-list {
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+
+    .nav-header-list-item a {
+        font-size: 0.7rem;
+        text-shadow: none;
+    }
+
+    .main-content-left p {
+        font-size: 0.9rem;
+    }
+
+    .family-gallery-swiper .swiper-slide {
+        width: 200px;
+    }
+
+    .close-lightbox {
+        font-size: 3rem;
+        top: 1rem;
+        right: 1.5rem;
+    }
+}
+
 
 
 
