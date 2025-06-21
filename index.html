@@ -20,14 +20,10 @@
     <canvas id="starfield"></canvas>
     <header>
         <nav class="nav-header">
-            <div class="image-nav">
-                <img src="images/art3.png" alt="">
-            </div>
             <ul class="nav-header-list nav-header">
                 <li class="nav-header-list-item"><a href="#">Benicio</a></li>
                 <li class="nav-header-list-item"><a href="#">Linha do tempo</a></li>
                 <li class="nav-header-list-item"><a href="#">Fotos</a></li>
-                <li class="nav-header-list-item"><a href="#">Vídeos</a></li>
             </ul>
         </nav>
     </header>
@@ -35,8 +31,17 @@
     <main>
         <div class="main-content-container">
             <div class="main-content-left arcade">
-                <h2 >Bem-vindo ao Benicio Niver!</h2>
-                <p>Aqui você encontrará fotos e vídeos do primeiro ano do Benício, tudo com um tema de video game retrô!</p>
+                <h2>Bem-vindo ao Benicio Niver!</h2>
+                <p>🎉 BEM-VINDO AO BENÍCIO NIVER! 🎉
+                    O jogo começou… e o nosso player 1 tá completando seu PRIMEIRO ANO de vida! 👶🕹️
+                    <br>
+                    🚀 Aqui você vai desbloquear fotos e vídeos do primeiro ano dessa fofura, tudo no melhor estilo
+                    video game retrô!
+                    <br>
+                    ✨ Prepare o coração, porque essa aventura pixelada tá cheia de amor, sorrisos e muita cutelância!
+                    🎮 PRESS START e vem jogar com a gente!
+                    <br>
+                </p>
                 <p>Prepare-se para uma aventura pixelada!</p>
                 <button class="press-start-button">PRESS START</button>
             </div>
@@ -57,35 +62,35 @@
                 <!-- Slides -->
                 <div class="swiper-slide">
                     <div class="timeline-slide-content">
-                        <div class="photo-placeholder"><span>Surpresa!</span></div>
+                        <div class="photo-placeholder"><img src="images/Surpresa.jpeg" alt="Surpresa" /></div>
                         <h4>A Descoberta</h4>
                         <p>Uma nova estrela estava para chegar ao nosso universo.</p>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="timeline-slide-content">
-                        <div class="photo-placeholder"><span>1º Mês</span></div>
+                        <div class="photo-placeholder"><img src="images/primeiromes.jpeg" alt="Primeiro mês" /></div>
                         <h4>Nascimento</h4>
                         <p>A contagem regressiva terminou! O início da nossa maior aventura.</p>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="timeline-slide-content">
-                        <div class="photo-placeholder"><span>2º Mês</span></div>
+                        <div class="photo-placeholder"><img src="images/primeirobanho.jpeg" alt=""></div>
                         <h4>Primeiro Banho</h4>
                         <p>Explorando novas fronteiras aquáticas.</p>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="timeline-slide-content">
-                        <div class="photo-placeholder"><span>4º Mês</span></div>
+                        <div class="photo-placeholder"><img src="images/primeiroSorriso.jpeg" alt=""></div>
                         <h4>Primeiro Sorriso</h4>
                         <p>Um sinal de luz que ilumina toda a galáxia.</p>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="timeline-slide-content">
-                        <div class="photo-placeholder"><span>7º Mês</span></div>
+                        <div class="photo-placeholder"><img src="images/Engatinhando.jpeg" alt=""></div>
                         <h4>Engatinhando</h4>
                         <p>Navegando pela casa em velocidade de dobra!</p>
                     </div>
@@ -114,9 +119,63 @@
         </div>
     </section>
 
+    <div class="section-divider"></div>
+
+    <section class="photo-gallery-section">
+        <h2>Galeria de Fotos</h2>
+        <p>Momentos especiais com a família e amigos.</p>
+        <div class="swiper family-gallery-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide gallery-item">
+                    <div class="photo-placeholder"><img src="images/imagesFamilia/familia1.jpeg" alt="Mamãe"></div>
+                    <div class="caption">Lembrança</div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <div class="photo-placeholder"><img src="images/imagesFamilia/familia2.jpeg" alt="Pai"></div>
+                    <div class="caption">Recordação</div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <div class="photo-placeholder"><img src="images/imagesFamilia/familia3.jpeg" alt=""></div>
+                    <div class="caption">Dia especial</div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <div class="photo-placeholder"><img src="images/imagesFamilia/familia4.jpeg" alt=""></div>
+                    <div class="caption">Muito amor</div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <div class="photo-placeholder"><img src="images/imagesFamilia/familia5.jpeg" alt=""></div>
+                    <div class="caption">Uma nova estrela</div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <div class="photo-placeholder"><img src="images/imagesFamilia/familia6.jpeg" alt=""></div>
+                    <div class="caption">Uma nova estrela</div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <div class="photo-placeholder"><img src="images/imagesFamilia/familia7.jpeg" alt=""></div>
+                    <div class="caption">Uma nova estrela</div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <div class="photo-placeholder"><img src="images/imagesFamilia/familia8.jpeg" alt=""></div>
+                    <div class="caption">Uma nova estrela</div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="scripts/starfield.js"></script>
 <script src="scripts/script.js"></script>
+
 </html>

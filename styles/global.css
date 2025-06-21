@@ -1,10 +1,9 @@
-html {
-    font-size: 62.5%; /* 1rem = 10px for easier calculations */
-}
-
-body {
-    position: relative;
-    background-color: var(--color-background);
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-orbitron);
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 *{
@@ -13,7 +12,7 @@ body {
 }
 
 :root{
-    --color-background: #0A0A0A; /* Preto bem escuro */
+    --color-background: #0d0d2b; /* Preto bem escuro */
     --color-cyan: #00BFFF; /* Azul vibrante */
     --color-vivid-red: #0080FF; /* Azul mais escuro */
     --color-lime-green: #0047AB; /* Azul marinho */

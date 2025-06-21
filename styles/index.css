@@ -49,6 +49,18 @@ body::before {
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 main {
     background-color: rgba(var(--color-cyan), 0.5);
     border: 2px solid var(--color-metal-dark);
@@ -66,6 +78,11 @@ main {
     overflow: hidden;
     position: relative;
     z-index: 1;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    animation: float 6s ease-in-out infinite;
 }
 
 .main-content-container {
@@ -230,6 +247,10 @@ main a:hover {
     padding: 20px 0 50px 0;
 }
 
+.horizontal-timeline .swiper-slide {
+    height: 350px;
+}
+
 .timeline-slide-content {
     background-color: rgba(var(--color-cyan-rgb), 0.1);
     border: 2px solid var(--color-cyan);
@@ -238,32 +259,51 @@ main a:hover {
     height: 100%;
     box-sizing: border-box;
     transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    animation: float 6s ease-in-out infinite;
 }
 
 .timeline-slide-content:hover {
     background-color: rgba(var(--color-cyan-rgb), 0.2);
+    animation-play-state: paused;
 }
 
 .timeline-slide-content .photo-placeholder {
     width: 100%;
-    height: 200px;
-    background-color: #000;
-    border: 2px dashed var(--color-cyan);
-    border-radius: 8px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    max-height: none;
+    background-color: var(--color-background);
+    border-radius: 10px;
     margin-bottom: 15px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-press-start-2p);
-    color: var(--color-cyan);
-    font-size: 1.5rem;
+}
+
+.timeline-slide-content .photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.timeline-slide-content .photo-placeholder img:hover {
+    transform: scale(1.05);
 }
 
 .timeline-slide-content h4 {
-    font-family: var(--font-press-start-2p);
+    font-family: var(--font-bangers);
     font-size: 1rem;
     color: var(--color-lime-green);
     margin-bottom: 10px;
+    margin-top: auto;
+    font-style: italic;
+    font-size: 0.9em;
+    opacity: 0.8;
 }
 
 .timeline-slide-content p {
@@ -289,6 +329,10 @@ main a:hover {
 
 .horizontal-timeline .swiper-pagination-bullet-active {
     background: var(--color-orange);
+}
+
+.horizontal-timeline .swiper-slide:nth-child(2n) .timeline-slide-content {
+    animation-delay: -3s;
 }
 
 .timeline-section {
@@ -480,36 +524,23 @@ main a:hover {
     text-shadow: 2px 2px 0px #000;
 }
 
+.family-gallery-swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.family-gallery-swiper .swiper-slide {
+    width: 280px;
+    background-color: var(--color-metal-medium);
+    border-radius: 8px;
+}
+
 .gallery-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px;
-    background: rgba(0,0,0,0.2);
-    border: 2px solid var(--color-metal-dark);
-    border-radius: 10px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-cyan) var(--color-metal-dark);
-}
-
-.gallery-container::-webkit-scrollbar {
-    height: 12px;
-}
-
-.gallery-container::-webkit-scrollbar-track {
-    background: var(--color-metal-dark);
-    border-radius: 10px;
-}
-
-.gallery-container::-webkit-scrollbar-thumb {
-    background-color: var(--color-cyan);
-    border-radius: 10px;
-    border: 3px solid var(--color-metal-dark);
+    display: none;
 }
 
 .gallery-item {
-    flex: 0 0 250px;
-    background-color: var(--color-metal-medium);
     border: 3px solid var(--color-metal-light);
     border-radius: 8px;
     padding: 10px;
@@ -520,6 +551,21 @@ main a:hover {
 .gallery-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+}
+
+.gallery-item .photo-placeholder {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-background);
+    border: none;
+    overflow: hidden;
+}
+
+.gallery-item .photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
 }
 
 .photo-placeholder {
@@ -540,6 +586,41 @@ main a:hover {
     font-family: var(--font-orbitron);
     font-size: 1rem;
     color: var(--color-text-light);
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    animation: fadeIn 0.5s;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-lightbox:hover {
+    color: var(--color-cyan);
 }
 
 
