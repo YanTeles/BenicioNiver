@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/index.css">
 
     <link
@@ -47,29 +48,75 @@
 
     <div class="section-divider"></div>
 
-    <section class="timeline-section">
-        <div class="bubbles">
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
-            <span class="bubble"></span>
+    <section class="horizontal-timeline-section">
+        <h2>A Jornada de Benício</h2>
+        <p>Explore o primeiro ano do nosso pequeno astronauta, mês a mês.</p>
+
+        <div class="swiper horizontal-timeline">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="timeline-slide-content">
+                        <div class="photo-placeholder"><span>Surpresa!</span></div>
+                        <h4>A Descoberta</h4>
+                        <p>Uma nova estrela estava para chegar ao nosso universo.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="timeline-slide-content">
+                        <div class="photo-placeholder"><span>1º Mês</span></div>
+                        <h4>Nascimento</h4>
+                        <p>A contagem regressiva terminou! O início da nossa maior aventura.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="timeline-slide-content">
+                        <div class="photo-placeholder"><span>2º Mês</span></div>
+                        <h4>Primeiro Banho</h4>
+                        <p>Explorando novas fronteiras aquáticas.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="timeline-slide-content">
+                        <div class="photo-placeholder"><span>4º Mês</span></div>
+                        <h4>Primeiro Sorriso</h4>
+                        <p>Um sinal de luz que ilumina toda a galáxia.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="timeline-slide-content">
+                        <div class="photo-placeholder"><span>7º Mês</span></div>
+                        <h4>Engatinhando</h4>
+                        <p>Navegando pela casa em velocidade de dobra!</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="timeline-slide-content">
+                        <div class="photo-placeholder"><span>10º Mês</span></div>
+                        <h4>Primeira Palavra</h4>
+                        <p>Contato inicial estabelecido com sucesso.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="timeline-slide-content">
+                        <div class="photo-placeholder"><span>12º Mês</span></div>
+                        <h4>Primeiro Aniversário</h4>
+                        <p>Uma volta completa ao redor do sol!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-        <h2>Linha do Tempo de Benício</h2>
-        <p>Navegue pelos momentos mais marcantes do primeiro ano do Benício!</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure omnis, optio ea adipisci aliquid fugit quisquam? Consectetur dolorem inventore sequi ad! Veritatis, impedit iure. Nostrum quam cumque quisquam quis placeat!</p>
-        <p>Este é um conteúdo adicional para garantir que a barra de rolagem seja ativada. Você pode substituir este texto e adicionar mais elementos de linha do tempo aqui.</p>
-        <p>Continue descendo para ver mais momentos importantes na vida do Benício!</p>
-        <p>Mais um pouco de texto para preencher o espaço e testar a rolagem. Não se preocupe, você pode remover ou substituir este texto a qualquer momento.</p>
-        <!-- Conteúdo da linha do tempo virá aqui -->
     </section>
 
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="scripts/starfield.js"></script>
+<script src="scripts/script.js"></script>
 </html>
