@@ -130,4 +130,58 @@ document.addEventListener('DOMContentLoaded', function () {
             close();
         }
     });
+
+    // --- Mensagens (Guestbook) ---
+
+    const mensagensList = document.getElementById('mensagens-list');
+    const mensagemForm = document.getElementById('mensagem-form');
+
+    // Função para renderizar mensagens
+    function renderMensagens(mensagens) {
+        mensagensList.innerHTML = '';
+        mensagens.forEach(msg => {
+            const div = document.createElement('div');
+            div.className = 'mensagem-item';
+            div.innerHTML = `<strong>${msg.nome}</strong><br>${msg.mensagem}`;
+            mensagensList.appendChild(div);
+        });
+    }
+
+    // Buscar mensagens do backend
+    async function fetchMensagens() {
+        try {
+            const res = await fetch('/api/messages');
+            const data = await res.json();
+            renderMensagens(data);
+        } catch (err) {
+            mensagensList.innerHTML = '<div style="color:red">Erro ao carregar mensagens.</div>';
+        }
+    }
+
+    // Enviar nova mensagem
+    mensagemForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const nome = document.getElementById('nome').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+        if (!nome || !mensagem) return;
+        try {
+            const res = await fetch('/api/messages', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nome, mensagem })
+            });
+            if (res.ok) {
+                document.getElementById('nome').value = '';
+                document.getElementById('mensagem').value = '';
+                fetchMensagens();
+            } else {
+                alert('Erro ao enviar mensagem.');
+            }
+        } catch (err) {
+            alert('Erro ao enviar mensagem.');
+        }
+    });
+
+    // Carregar mensagens ao abrir a página
+    fetchMensagens();
 });

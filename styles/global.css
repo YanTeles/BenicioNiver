@@ -39,3 +39,64 @@ html, body {
     --font-orbitron: 'Orbitron', sans-serif;
     --font-press-start-2p: 'Press Start 2P', cursive;
 }
+
+.mensagens-section {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #181818;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  color: #fff;
+}
+.mensagens-section h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+.mensagens-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+.mensagem-item {
+  background: #232323;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  word-break: break-word;
+}
+.mensagem-item strong {
+  color: #ffd700;
+  font-size: 0.95em;
+}
+.mensagem-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mensagem-form input,
+.mensagem-form textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+}
+.mensagem-form button {
+  background: #ffd700;
+  color: #181818;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.mensagem-form button:hover {
+  background: #ffb300;
+}
