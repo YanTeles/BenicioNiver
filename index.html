@@ -17,36 +17,19 @@
 </head>
 
 <body>
-    <canvas id="starfield"></canvas>
-    <header>
-        <nav class="nav-header">
-            <ul class="nav-header-list nav-header">
-                <li class="nav-header-list-item"><a href="#">Benicio</a></li>
-                <li class="nav-header-list-item"><a href="#">Linha do tempo</a></li>
-                <li class="nav-header-list-item"><a href="#">Fotos</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <canvas id="star-canvas"></canvas>
+    
     <main>
         <div class="main-content-container">
             <div class="main-content-left arcade">
-                <h2>Bem-vindo ao Benicio Niver!</h2>
-                <p>🎉 BEM-VINDO AO BENÍCIO NIVER! 🎉
-                    O jogo começou… e o nosso player 1 tá completando seu PRIMEIRO ANO de vida! 👶🕹️
-                    <br>
-                    🚀 Aqui você vai desbloquear fotos e vídeos do primeiro ano dessa fofura, tudo no melhor estilo
-                    video game retrô!
-                    <br>
-                    ✨ Prepare o coração, porque essa aventura pixelada tá cheia de amor, sorrisos e muita cutelância!
-                    🎮 PRESS START e vem jogar com a gente!
-                    <br>
+                <h2>Bem-vindo ao Aniversário do Benício!</h2>
+                <p>✨ Bem-vindo! Hoje celebramos o primeiro ano do nosso pequeno Benício sob um céu estrelado. Cada estrela representa um momento especial, cada brilho um sorriso compartilhado.<br><br>
+                Navegue pela linha do tempo e pela galeria de fotos para reviver os momentos mais marcantes dessa jornada iluminada. Deixe sua mensagem e faça parte dessa constelação de carinho!
                 </p>
-                <p>Prepare-se para uma aventura pixelada!</p>
-                <button class="press-start-button">PRESS START</button>
+                <p>Que essa noite seja repleta de luz, amor e boas lembranças!</p>
             </div>
             <div class="main-content-right">
-                <img src="images/art1.png" alt="Arte de pixel">
+                <img src="images/art1.png" alt="Arte de céu estrelado">
             </div>
         </div>
     </main>
@@ -332,20 +315,30 @@
         <img class="lightbox-content" id="lightbox-img">
     </div>
 
-    <section class="mensagens-section">
-        <h2>Deixe sua mensagem para o Benício!</h2>
-        <div id="mensagens-list" class="mensagens-list"></div>
-        <form id="mensagem-form" class="mensagem-form">
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
-            <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..." required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+    <!-- Remover a seção de mensagens -->
+
+    <section id="countdown-section" style="text-align:center; margin: 32px 0 0 0;">
+        <h3 style="color:#4fd1c5; font-family:'Orbitron',Arial,sans-serif; margin-bottom:8px;">Contagem regressiva para o próximo aniversário!</h3>
+        <span style="color:#fff; font-size:1.5rem; font-family:'Orbitron',Arial,sans-serif; background:rgba(30,34,54,0.96); border-radius:12px; padding:10px 24px; display:inline-block; box-shadow:0 2px 12px 0 rgba(0,0,0,0.18);">
+            <span id="countdown">00d 00h 00m 00s</span>
+        </span>
     </section>
 
-</body>
+    <section id="countdown-section-2" style="text-align:center; margin: 18px 0 0 0;">
+        <h3 style="color:#4fd1c5; font-family:'Orbitron',Arial,sans-serif; margin-bottom:8px;">Contagem regressiva para 14/07!</h3>
+        <span style="color:#fff; font-size:1.5rem; font-family:'Orbitron',Arial,sans-serif; background:rgba(30,34,54,0.96); border-radius:12px; padding:10px 24px; display:inline-block; box-shadow:0 2px 12px 0 rgba(0,0,0,0.18);">
+            <span id="countdown-2">00d 00h 00m 00s</span>
+        </span>
+    </section>
 
+    <section id="cronometro-section" style="text-align:center; margin: 24px 0 0 0;">
+        <span style="color:#ffd700; font-size:1.2rem; font-family:'Orbitron',Arial,sans-serif;">Tempo na página: <span id="cronometro">00:00:00</span></span>
+    </section>
+
+    <footer style="text-align:center; margin: 32px 0 12px 0; color: #b3c6ff; font-size: 1.1rem;">
+    </footer>
+</body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="scripts/starfield.js"></script>
 <script src="scripts/script.js"></script>
 
 </html>

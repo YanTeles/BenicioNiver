@@ -40,6 +40,60 @@ html, body {
     --font-press-start-2p: 'Press Start 2P', cursive;
 }
 
+#star-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+body {
+  background:
+    /* Nebulosas suaves */
+    radial-gradient(ellipse at 20% 30%, rgba(120,180,255,0.13) 0%, rgba(0,0,0,0) 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(180,120,255,0.10) 0%, rgba(0,0,0,0) 65%),
+    radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 60%),
+    radial-gradient(ellipse at 40% 80%, rgba(120,255,255,0.09) 0%, rgba(0,0,0,0) 70%),
+    /* Gradiente base do céu noturno */
+    radial-gradient(ellipse at 50% 40%, #232b47 0%, #10182c 80%, #0a0a18 100%);
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Orbitron', Arial, sans-serif;
+  position: relative;
+}
+
+.mensagens-section,
+.photo-gallery-section,
+.horizontal-timeline-section {
+  background: rgba(30, 34, 54, 0.96); /* tom mais claro e opaco que o fundo */
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25), 0 1.5px 0 0 #4fd1c5 inset;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  margin-bottom: 32px;
+  padding: 24px 20px;
+  transition: box-shadow 0.2s;
+}
+
+.mensagens-section:hover,
+.photo-gallery-section:hover,
+.horizontal-timeline-section:hover {
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35), 0 2.5px 0 0 #4fd1c5 inset;
+}
+
+.main-content-left h2, .main-content-left p {
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+
+.press-start-button {
+  display: none;
+}
+
+/* Remover arcade/pixel art */
+.arcade {
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+
 .mensagens-section {
   max-width: 600px;
   margin: 40px auto;
@@ -99,4 +153,38 @@ html, body {
 }
 .mensagem-form button:hover {
   background: #ffb300;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 16, 32, 0.92);
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.lightbox-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.45);
+  transition: transform 0.2s;
+}
+.close-lightbox {
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+  text-shadow: 0 2px 8px #000;
+  transition: color 0.2s;
+}
+.close-lightbox:hover {
+  color: #4fd1c5;
 }
