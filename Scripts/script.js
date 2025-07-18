@@ -92,6 +92,36 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    const telesFamilySwiper = new Swiper('.teles-family-gallery-swiper', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 3,
+        loop: true,
+        coverflowEffect: {
+            rotate: 20,
+            stretch: 0,
+            depth: 50,
+            modifier: 0.8,
+            slideShadows: true,
+        },
+        pagination: {
+            el: '.teles-family-gallery-swiper .swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.teles-family-gallery-swiper .swiper-button-next',
+            prevEl: '.teles-family-gallery-swiper .swiper-button-prev',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 4,
+            },
+            1024: {
+                slidesPerView: 5,
+            }
+        }
+    });
+
     // Press Start button scroll functionality
     // const pressStartButton = document.querySelector('.press-start-button');
     // if (pressStartButton) {
